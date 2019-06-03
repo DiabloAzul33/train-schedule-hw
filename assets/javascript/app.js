@@ -54,31 +54,31 @@ $("#add-train-btn").on("click", function (event) {
     $("#frequency-input").val("");
 });
 
-// database.ref().on("child_added", function (childSnapshot) {
-//     console.log(childSnapshot.val());
+database.ref().on("child_added", function (childSnapshot) {
+    console.log(childSnapshot.val());
 
-//     // Store everything into a variable.
-//     var trainName = childSnapshot.val().name;
-//     var trainDestination = childSnapshot.val().destination;
-//     var trainFirstTime = childSnapshot.val().firstTime;
-//     var trainFreq = childSnapshot.val().frequency;
+    // Store everything into a variable.
+    var trainName = childSnapshot.val().name;
+    var trainDestination = childSnapshot.val().destination;
+    var trainFirstTime = childSnapshot.val().firstTime;
+    var trainFreq = childSnapshot.val().frequency;
 
-//     // Obtain current time
-//     // var currentTime = moment().diff(moment());
+    // Obtain current time
+    // var currentTime = moment().diff(moment());
 
-//     // Calculate time next train arrives
-//     // var trainNextArrival = trainFirstTime - trainFreq;
+    // Calculate time next train arrives
+    // var trainNextArrival = trainFirstTime - trainFreq;
 
-//     // Create the new row
-//     var newRow = $("<tr>").append(
-//         $("<td>").text(trainName),
-//         $("<td>").text(trainDestination),
-//         $("<td>").text(trainFirstTime),
-//         $("<td>").text(trainNextArrival),
-//         $("<td>").text(trainMinutesAway),
-//     );
+    // Create the new row
+    var newRow = $("<tr>").append(
+        $("<td>").text(trainName),
+        $("<td>").text(trainDestination),
+        $("<td>").text(trainFirstTime),
+        $("<td>").text(trainNextArrival),
+        $("<td>").text(trainMinutesAway),
+    );
 
-//     // Append the new row to the table
-//     $("#train-table > tbody").append(newRow);
-// });
+    // Append the new row to the table
+    $("#train-table > tbody").append(newRow);
+});
 });
